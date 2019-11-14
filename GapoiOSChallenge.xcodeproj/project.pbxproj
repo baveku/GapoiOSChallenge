@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10D8237D6150007758E9 /* AppDelegate.swift */; };
+		844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DA237D6150007758E9 /* SceneDelegate.swift */; };
+		844B10DD237D6150007758E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DC237D6150007758E9 /* ViewController.swift */; };
+		844B10E0237D6150007758E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10DE237D6150007758E9 /* Main.storyboard */; };
+		844B10E2237D6153007758E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844B10E1237D6153007758E9 /* Assets.xcassets */; };
+		844B10E5237D6153007758E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10E3237D6153007758E9 /* LaunchScreen.storyboard */; };
+		844B10F0237D6153007758E9 /* GapoiOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10EF237D6153007758E9 /* GapoiOSChallengeTests.swift */; };
+		844B10FB237D6153007758E9 /* GapoiOSChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10FA237D6153007758E9 /* GapoiOSChallengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		844B10EC237D6153007758E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 844B10CD237D6150007758E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 844B10D4237D6150007758E9;
+			remoteInfo = GapoiOSChallenge;
+		};
+		844B10F7237D6153007758E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 844B10CD237D6150007758E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 844B10D4237D6150007758E9;
+			remoteInfo = GapoiOSChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		844B10D5237D6150007758E9 /* GapoiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapoiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		844B10D8237D6150007758E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		844B10DA237D6150007758E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		844B10DC237D6150007758E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		844B10DF237D6150007758E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		844B10E1237D6153007758E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		844B10E4237D6153007758E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		844B10E6237D6153007758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844B10EB237D6153007758E9 /* GapoiOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GapoiOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		844B10EF237D6153007758E9 /* GapoiOSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapoiOSChallengeTests.swift; sourceTree = "<group>"; };
+		844B10F1237D6153007758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844B10F6237D6153007758E9 /* GapoiOSChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GapoiOSChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		844B10FA237D6153007758E9 /* GapoiOSChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapoiOSChallengeUITests.swift; sourceTree = "<group>"; };
+		844B10FC237D6153007758E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		844B10D2237D6150007758E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10E8237D6153007758E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10F3237D6153007758E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		844B10CC237D6150007758E9 = {
+			isa = PBXGroup;
+			children = (
+				844B10D7237D6150007758E9 /* GapoiOSChallenge */,
+				844B10EE237D6153007758E9 /* GapoiOSChallengeTests */,
+				844B10F9237D6153007758E9 /* GapoiOSChallengeUITests */,
+				844B10D6237D6150007758E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		844B10D6237D6150007758E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				844B10D5237D6150007758E9 /* GapoiOSChallenge.app */,
+				844B10EB237D6153007758E9 /* GapoiOSChallengeTests.xctest */,
+				844B10F6237D6153007758E9 /* GapoiOSChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		844B10D7237D6150007758E9 /* GapoiOSChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				844B10D8237D6150007758E9 /* AppDelegate.swift */,
+				844B10DA237D6150007758E9 /* SceneDelegate.swift */,
+				844B10DC237D6150007758E9 /* ViewController.swift */,
+				844B10DE237D6150007758E9 /* Main.storyboard */,
+				844B10E1237D6153007758E9 /* Assets.xcassets */,
+				844B10E3237D6153007758E9 /* LaunchScreen.storyboard */,
+				844B10E6237D6153007758E9 /* Info.plist */,
+			);
+			path = GapoiOSChallenge;
+			sourceTree = "<group>";
+		};
+		844B10EE237D6153007758E9 /* GapoiOSChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				844B10EF237D6153007758E9 /* GapoiOSChallengeTests.swift */,
+				844B10F1237D6153007758E9 /* Info.plist */,
+			);
+			path = GapoiOSChallengeTests;
+			sourceTree = "<group>";
+		};
+		844B10F9237D6153007758E9 /* GapoiOSChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				844B10FA237D6153007758E9 /* GapoiOSChallengeUITests.swift */,
+				844B10FC237D6153007758E9 /* Info.plist */,
+			);
+			path = GapoiOSChallengeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		844B10D4237D6150007758E9 /* GapoiOSChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844B10FF237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallenge" */;
+			buildPhases = (
+				844B10D1237D6150007758E9 /* Sources */,
+				844B10D2237D6150007758E9 /* Frameworks */,
+				844B10D3237D6150007758E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GapoiOSChallenge;
+			productName = GapoiOSChallenge;
+			productReference = 844B10D5237D6150007758E9 /* GapoiOSChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		844B10EA237D6153007758E9 /* GapoiOSChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844B1102237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallengeTests" */;
+			buildPhases = (
+				844B10E7237D6153007758E9 /* Sources */,
+				844B10E8237D6153007758E9 /* Frameworks */,
+				844B10E9237D6153007758E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				844B10ED237D6153007758E9 /* PBXTargetDependency */,
+			);
+			name = GapoiOSChallengeTests;
+			productName = GapoiOSChallengeTests;
+			productReference = 844B10EB237D6153007758E9 /* GapoiOSChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		844B10F5237D6153007758E9 /* GapoiOSChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844B1105237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallengeUITests" */;
+			buildPhases = (
+				844B10F2237D6153007758E9 /* Sources */,
+				844B10F3237D6153007758E9 /* Frameworks */,
+				844B10F4237D6153007758E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				844B10F8237D6153007758E9 /* PBXTargetDependency */,
+			);
+			name = GapoiOSChallengeUITests;
+			productName = GapoiOSChallengeUITests;
+			productReference = 844B10F6237D6153007758E9 /* GapoiOSChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		844B10CD237D6150007758E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Bách veku";
+				TargetAttributes = {
+					844B10D4237D6150007758E9 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					844B10EA237D6153007758E9 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 844B10D4237D6150007758E9;
+					};
+					844B10F5237D6153007758E9 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 844B10D4237D6150007758E9;
+					};
+				};
+			};
+			buildConfigurationList = 844B10D0237D6150007758E9 /* Build configuration list for PBXProject "GapoiOSChallenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 844B10CC237D6150007758E9;
+			productRefGroup = 844B10D6237D6150007758E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				844B10D4237D6150007758E9 /* GapoiOSChallenge */,
+				844B10EA237D6153007758E9 /* GapoiOSChallengeTests */,
+				844B10F5237D6153007758E9 /* GapoiOSChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		844B10D3237D6150007758E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844B10E5237D6153007758E9 /* LaunchScreen.storyboard in Resources */,
+				844B10E2237D6153007758E9 /* Assets.xcassets in Resources */,
+				844B10E0237D6150007758E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10E9237D6153007758E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10F4237D6153007758E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		844B10D1237D6150007758E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844B10DD237D6150007758E9 /* ViewController.swift in Sources */,
+				844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */,
+				844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10E7237D6153007758E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844B10F0237D6153007758E9 /* GapoiOSChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844B10F2237D6153007758E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844B10FB237D6153007758E9 /* GapoiOSChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		844B10ED237D6153007758E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 844B10D4237D6150007758E9 /* GapoiOSChallenge */;
+			targetProxy = 844B10EC237D6153007758E9 /* PBXContainerItemProxy */;
+		};
+		844B10F8237D6153007758E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 844B10D4237D6150007758E9 /* GapoiOSChallenge */;
+			targetProxy = 844B10F7237D6153007758E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		844B10DE237D6150007758E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844B10DF237D6150007758E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		844B10E3237D6153007758E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844B10E4237D6153007758E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		844B10FD237D6153007758E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		844B10FE237D6153007758E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		844B1100237D6153007758E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		844B1101237D6153007758E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		844B1103237D6153007758E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GapoiOSChallenge.app/GapoiOSChallenge";
+			};
+			name = Debug;
+		};
+		844B1104237D6153007758E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GapoiOSChallenge.app/GapoiOSChallenge";
+			};
+			name = Release;
+		};
+		844B1106237D6153007758E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GapoiOSChallenge;
+			};
+			name = Debug;
+		};
+		844B1107237D6153007758E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGXXBSPSUH;
+				INFOPLIST_FILE = GapoiOSChallengeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.baveku.GapoiOSChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GapoiOSChallenge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		844B10D0237D6150007758E9 /* Build configuration list for PBXProject "GapoiOSChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844B10FD237D6153007758E9 /* Debug */,
+				844B10FE237D6153007758E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844B10FF237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844B1100237D6153007758E9 /* Debug */,
+				844B1101237D6153007758E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844B1102237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844B1103237D6153007758E9 /* Debug */,
+				844B1104237D6153007758E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844B1105237D6153007758E9 /* Build configuration list for PBXNativeTarget "GapoiOSChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844B1106237D6153007758E9 /* Debug */,
+				844B1107237D6153007758E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 844B10CD237D6150007758E9 /* Project object */;
+}
