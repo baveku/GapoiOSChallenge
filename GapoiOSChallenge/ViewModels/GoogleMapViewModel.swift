@@ -6,4 +6,13 @@
 //  Copyright © 2019 Bách veku. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import CoreLocation
+
+class GoogleMapViewModel {
+    
+    var fromLocation = PublishSubject<CLLocationCoordinate2D>()
+    var toLocation = PublishSubject<CLLocationCoordinate2D>()
+    
+//    func get
+}

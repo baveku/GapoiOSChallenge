@@ -7,24 +7,50 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class GoogleMapViewController: UIViewController {
-
+class GoogleMapViewController: UIViewController, CLLocationManagerDelegate {
+    var locationManager = CLLocationManager()
+    // MARK: IBOutlet
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var fromLabel: DesignableLabel!
+    @IBOutlet weak var toLabel: DesignableLabel!
+    
+    // MARK: Lifecycle
+//    let viewModel = GoogleMap
+    func initViewModel() {}
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.onFindCurrentLocation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func loadView() {
+        super.loadView()
+        
     }
-    */
 
+    // MARK: Action
+    func onUpdateDirections() {
+        
+    }
+    
+    @IBAction func onFindCurrentLocation() {
+        self.locationManager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard locations.count > 0 else {
+            return
+        }
+        let currentCameraPosition = GMSCameraPosition(target: locations[0].coordinate, zoom: 12)
+        self.mapView.camera = currentCameraPosition
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
 }

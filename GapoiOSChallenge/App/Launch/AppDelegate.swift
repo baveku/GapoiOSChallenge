@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyB95GZyPXSRSHP2dDIWYdT8r8vX29jNpPU")
+        let localtionAuthStatus = CLLocationManager.authorizationStatus()
+        if localtionAuthStatus != .authorizedWhenInUse || localtionAuthStatus != .authorizedAlways {
+            CLLocationManager().requestWhenInUseAuthorization()
+        }
         return true
     }
 
