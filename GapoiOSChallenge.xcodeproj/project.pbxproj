@@ -13,6 +13,7 @@
 		84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408548237E994500A69324 /* SearchLocationViewController.swift */; };
 		8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440854B237E9A2400A69324 /* LocationTableViewCell.swift */; };
 		8440854E237E9DDE00A69324 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440854D237E9DDE00A69324 /* MapKit.framework */; };
+		84408551237EA8A000A69324 /* EIdentifierSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408550237EA8A000A69324 /* EIdentifierSegue.swift */; };
 		844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10D8237D6150007758E9 /* AppDelegate.swift */; };
 		844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DA237D6150007758E9 /* SceneDelegate.swift */; };
 		844B10E0237D6150007758E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10DE237D6150007758E9 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		8440854B237E9A2400A69324 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		8440854D237E9DDE00A69324 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8440854F237E9DE600A69324 /* GapoiOSChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GapoiOSChallenge.entitlements; sourceTree = "<group>"; };
+		84408550237EA8A000A69324 /* EIdentifierSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EIdentifierSegue.swift; sourceTree = "<group>"; };
 		844B10D5237D6150007758E9 /* GapoiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapoiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844B10D8237D6150007758E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844B10DA237D6150007758E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				846D6BAB237D6C60002FE684 /* Endpoints.swift */,
+				84408550237EA8A000A69324 /* EIdentifierSegue.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */,
 				8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */,
 				84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */,
+				84408551237EA8A000A69324 /* EIdentifierSegue.swift in Sources */,
 				844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

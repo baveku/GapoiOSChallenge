@@ -12,6 +12,9 @@ import UIKit
 @IBDesignable
 class DesignableLabel: UILabel {}
 
+@IBDesignable
+class DesignableButton: UIButton {}
+
 extension UIView {
     @IBInspectable
     var cornerRadius: CGFloat {

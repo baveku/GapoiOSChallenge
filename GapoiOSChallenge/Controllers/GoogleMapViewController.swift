@@ -13,8 +13,8 @@ class GoogleMapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     // MARK: IBOutlet
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var fromLabel: DesignableLabel!
-    @IBOutlet weak var toLabel: DesignableLabel!
+    @IBOutlet weak var fromButton: DesignableButton!
+    @IBOutlet weak var toButton: DesignableButton!
     
     // MARK: Lifecycle
 //    let viewModel = GoogleMap
@@ -40,6 +40,9 @@ class GoogleMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func onFindCurrentLocation() {
         self.locationManager.requestLocation()
+    }
+    @IBAction func onSelectLocation(_ sender: DesignableButton) {
+        self.performSegue(withIdentifier: EIdentifierSegue.fromGoogleMaptoSeachMap.rawValue, sender: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

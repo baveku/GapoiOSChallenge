@@ -18,17 +18,17 @@ class SearchLocationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.initDelegateDataSource()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initDelegateDataSource() {
+        self.searchBar.delegate = self
+        self.searchBar.searchTextField.becomeFirstResponder()
     }
-    */
+}
 
+extension SearchLocationViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
