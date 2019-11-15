@@ -10,9 +10,11 @@
 		2A88F9BC62BB8A0427211E5D /* Pods_GapoiOSChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCB77E767C944D88FF2425D /* Pods_GapoiOSChallenge.framework */; };
 		50B0BFD1ACF667EEBEDB538B /* Pods_GapoiOSChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266F1754361BBFDED78B81E6 /* Pods_GapoiOSChallengeTests.framework */; };
 		807748B5547D5C58DC742508 /* Pods_GapoiOSChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4932604C2153F78B63D61856 /* Pods_GapoiOSChallengeUITests.framework */; };
+		84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408548237E994500A69324 /* SearchLocationViewController.swift */; };
+		8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440854B237E9A2400A69324 /* LocationTableViewCell.swift */; };
+		8440854E237E9DDE00A69324 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440854D237E9DDE00A69324 /* MapKit.framework */; };
 		844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10D8237D6150007758E9 /* AppDelegate.swift */; };
 		844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DA237D6150007758E9 /* SceneDelegate.swift */; };
-		844B10DD237D6150007758E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DC237D6150007758E9 /* ViewController.swift */; };
 		844B10E0237D6150007758E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10DE237D6150007758E9 /* Main.storyboard */; };
 		844B10E2237D6153007758E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844B10E1237D6153007758E9 /* Assets.xcassets */; };
 		844B10E5237D6153007758E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10E3237D6153007758E9 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,8 @@
 		844B1116237D6B9E007758E9 /* GoogleMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B1115237D6B9E007758E9 /* GoogleMapRepository.swift */; };
 		844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B1117237D6BC0007758E9 /* GoogleMapViewModel.swift */; };
 		846D6BAC237D6C60002FE684 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846D6BAB237D6C60002FE684 /* Endpoints.swift */; };
+		84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016A237E52AB004C99DF /* UIView+Extensions.swift */; };
+		84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +51,13 @@
 		266F1754361BBFDED78B81E6 /* Pods_GapoiOSChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapoiOSChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4932604C2153F78B63D61856 /* Pods_GapoiOSChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapoiOSChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F89699948A58955C21BA931 /* Pods-GapoiOSChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallengeUITests/Pods-GapoiOSChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84408548237E994500A69324 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		8440854B237E9A2400A69324 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		8440854D237E9DDE00A69324 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8440854F237E9DE600A69324 /* GapoiOSChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GapoiOSChallenge.entitlements; sourceTree = "<group>"; };
 		844B10D5237D6150007758E9 /* GapoiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapoiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844B10D8237D6150007758E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844B10DA237D6150007758E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		844B10DC237D6150007758E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		844B10DF237D6150007758E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		844B10E1237D6153007758E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844B10E4237D6153007758E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +73,8 @@
 		844B1115237D6B9E007758E9 /* GoogleMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapRepository.swift; sourceTree = "<group>"; };
 		844B1117237D6BC0007758E9 /* GoogleMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewModel.swift; sourceTree = "<group>"; };
 		846D6BAB237D6C60002FE684 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		84B6016A237E52AB004C99DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8750461646DFB9E8801B41E2 /* Pods-GapoiOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallenge.release.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallenge/Pods-GapoiOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		ABCB77E767C944D88FF2425D /* Pods_GapoiOSChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapoiOSChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2109B6353AAA690553317A3 /* Pods-GapoiOSChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallengeTests/Pods-GapoiOSChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8440854E237E9DDE00A69324 /* MapKit.framework in Frameworks */,
 				2A88F9BC62BB8A0427211E5D /* Pods_GapoiOSChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +114,7 @@
 		3A0DB59AEE28546AA5C7CF48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8440854D237E9DDE00A69324 /* MapKit.framework */,
 				ABCB77E767C944D88FF2425D /* Pods_GapoiOSChallenge.framework */,
 				266F1754361BBFDED78B81E6 /* Pods_GapoiOSChallengeTests.framework */,
 				4932604C2153F78B63D61856 /* Pods_GapoiOSChallengeUITests.framework */,
@@ -122,6 +133,14 @@
 				EFB87A45C32363B46D63AA7B /* Pods-GapoiOSChallengeUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8440854A237E99E900A69324 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8440854B237E9A2400A69324 /* LocationTableViewCell.swift */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		844B10CC237D6150007758E9 = {
@@ -149,8 +168,10 @@
 		844B10D7237D6150007758E9 /* GapoiOSChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				846D6BAA237D6C4E002FE684 /* Constants */,
+				8440854F237E9DE600A69324 /* GapoiOSChallenge.entitlements */,
 				844B1111237D6B0F007758E9 /* App */,
+				84B60168237E5293004C99DF /* Extensions */,
+				846D6BAA237D6C4E002FE684 /* Constants */,
 				844B1110237D6B02007758E9 /* Storyboards */,
 				844B110D237D6A7E007758E9 /* Repositories */,
 				844B110C237D6A6A007758E9 /* Services */,
@@ -200,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				844B1113237D6B62007758E9 /* GoogleMapViewController.swift */,
+				84408548237E994500A69324 /* SearchLocationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +229,7 @@
 		844B110B237D6A52007758E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8440854A237E99E900A69324 /* TableCell */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,7 +271,6 @@
 			children = (
 				844B10D8237D6150007758E9 /* AppDelegate.swift */,
 				844B10DA237D6150007758E9 /* SceneDelegate.swift */,
-				844B10DC237D6150007758E9 /* ViewController.swift */,
 				844B10E3237D6153007758E9 /* LaunchScreen.storyboard */,
 				844B10E6237D6153007758E9 /* Info.plist */,
 			);
@@ -261,6 +283,31 @@
 				846D6BAB237D6C60002FE684 /* Endpoints.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		84B60168237E5293004C99DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84B6016C237E52C1004C99DF /* ViewControllers */,
+				84B60169237E529A004C99DF /* Views */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84B60169237E529A004C99DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84B6016A237E52AB004C99DF /* UIView+Extensions.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84B6016C237E52C1004C99DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,12 +550,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				844B1114237D6B62007758E9 /* GoogleMapViewController.swift in Sources */,
-				844B10DD237D6150007758E9 /* ViewController.swift in Sources */,
 				844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */,
+				84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */,
 				844B1116237D6B9E007758E9 /* GoogleMapRepository.swift in Sources */,
 				844B110F237D6AF4007758E9 /* GoogleMapsApiService.swift in Sources */,
 				844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */,
 				846D6BAC237D6C60002FE684 /* Endpoints.swift in Sources */,
+				84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */,
+				8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */,
+				84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */,
 				844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,9 +733,10 @@
 			baseConfigurationReference = 1864AE240BF40C3EC40DBA9C /* Pods-GapoiOSChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GapoiOSChallenge/GapoiOSChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JGXXBSPSUH;
-				INFOPLIST_FILE = GapoiOSChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GapoiOSChallenge/App/Launch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,9 +753,10 @@
 			baseConfigurationReference = 8750461646DFB9E8801B41E2 /* Pods-GapoiOSChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GapoiOSChallenge/GapoiOSChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JGXXBSPSUH;
-				INFOPLIST_FILE = GapoiOSChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GapoiOSChallenge/App/Launch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

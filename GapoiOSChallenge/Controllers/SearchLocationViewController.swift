@@ -10,6 +10,10 @@ import UIKit
 
 class SearchLocationViewController: UIViewController {
 
+    // MARK: IBOutlet
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

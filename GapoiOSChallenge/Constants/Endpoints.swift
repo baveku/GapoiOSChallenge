@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Endpoints {
-    case <#case#>
+enum Endpoints: String {
+    case googleMap = "api"
 }
