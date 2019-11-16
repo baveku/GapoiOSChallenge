@@ -8,7 +8,7 @@ target 'GapoiOSChallenge' do
   # Pods for GapoiOSChallenge
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'RxSwift'
+  pod 'RxSwift', '~> 5.0.1'
   pod 'RxCocoa'
   pod 'Moya'
 

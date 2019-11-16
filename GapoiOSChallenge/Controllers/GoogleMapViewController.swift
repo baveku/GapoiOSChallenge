@@ -8,52 +8,62 @@
 
 import UIKit
 import GoogleMaps
+import RxCocoa
+import RxSwift
 
-class GoogleMapViewController: UIViewController, CLLocationManagerDelegate {
-    var locationManager = CLLocationManager()
+class GoogleMapViewController: UIBaseViewController {
+    let viewModel = GoogleMapViewModel()
+    
     // MARK: IBOutlet
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var fromButton: DesignableButton!
     @IBOutlet weak var toButton: DesignableButton!
+    @IBOutlet weak var currenLocationButton: DesignableButton!
     
-    // MARK: Lifecycle
-//    let viewModel = GoogleMap
-    func initViewModel() {}
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.locationManager = CLLocationManager()
-        self.locationManager.delegate = self
-        self.onFindCurrentLocation()
-    }
-    
-    override func loadView() {
-        super.loadView()
-        
+        bindingModel()
+        bindingAction()
     }
 
     // MARK: Action
     func onUpdateDirections() {
-        
+        self.viewModel.getDirectionFromGoogleMapAPI()
     }
-    
-    @IBAction func onFindCurrentLocation() {
-        self.locationManager.requestLocation()
-    }
+
     @IBAction func onSelectLocation(_ sender: DesignableButton) {
         self.performSegue(withIdentifier: EIdentifierSegue.fromGoogleMaptoSeachMap.rawValue, sender: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard locations.count > 0 else {
-            return
-        }
-        let currentCameraPosition = GMSCameraPosition(target: locations[0].coordinate, zoom: 12)
-        self.mapView.camera = currentCameraPosition
+    // MARK: MapView Action
+    func updateCamera(to location: Location) {
+        let position = GMSCameraPosition(target: location.toCoordinate2D(), zoom: 12)
+        self.mapView.animate(with: .setCamera(position))
+    }
+}
+
+// MARK
+extension GoogleMapViewController {
+    func bindingModel() {
+        self.viewModel.error.subscribe({
+            UIAlertController.init(title: "ERROR", message: "\($0)", preferredStyle: .alert).show(self, sender: nil)
+        }).disposed(by: self.disposeBag)
+        self.viewModel.loading.subscribe { (isLoading) in
+            // Handle Loading Event
+            print(isLoading)
+        }.disposed(by: self.disposeBag)
+        
+        self.viewModel.cameraLocationPublish.subscribe({ (event) in
+            guard let location = event.element else {
+                return
+            }
+            self.updateCamera(to: location)
+        }).disposed(by: self.disposeBag)
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+    func bindingAction() {
+        self.currenLocationButton.rx.tap.bind {
+            self.viewModel.requestCurrentLocation()
+        }.disposed(by: self.disposeBag)
     }
 }

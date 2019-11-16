@@ -8,20 +8,22 @@
 
 import UIKit
 
-class LocationTableViewCell: UITableViewCell {
-
+class PlaceTableViewCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subTitile: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configure() {
-        
+    func configure(place: Place) {
+        self.title.text = place.name
+        self.subTitile.text = place.vincity
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+            
         // Configure the view for the selected state
     }
 
