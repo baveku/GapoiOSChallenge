@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>PlaceSDKApiKey</key>
+	<string>AIzaSyDfqkUASGxJhxdYDbehNvAS2SedPXGVheY</string>
+	<key>MapsSDKApiKey</key>
+	<string>AIzaSyB95GZyPXSRSHP2dDIWYdT8r8vX29jNpPU</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

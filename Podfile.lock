@@ -25,7 +25,7 @@ DEPENDENCIES:
   - GooglePlaces
   - Moya
   - RxCocoa
-  - RxSwift
+  - RxSwift (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -48,6 +48,6 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 0f4b3e12b68896fb7f7075c1ad48c7c2ff009db5
+PODFILE CHECKSUM: ac6608f0d87b12766078427cf9fb8cc0675fb968
 
 COCOAPODS: 1.7.5

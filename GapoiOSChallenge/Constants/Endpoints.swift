@@ -9,5 +9,11 @@
 import Foundation
 
 enum Endpoints: String {
-    case googleMap = "api"
+    case googleMapAPI = "https://maps.googleapis.com/maps/api"
+}
+
+extension Endpoints {
+    func toURL() -> URL {
+        return URL.init(string: self.rawValue)!
+    }
 }

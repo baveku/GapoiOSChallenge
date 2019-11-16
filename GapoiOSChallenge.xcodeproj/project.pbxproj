@@ -11,9 +11,10 @@
 		50B0BFD1ACF667EEBEDB538B /* Pods_GapoiOSChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266F1754361BBFDED78B81E6 /* Pods_GapoiOSChallengeTests.framework */; };
 		807748B5547D5C58DC742508 /* Pods_GapoiOSChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4932604C2153F78B63D61856 /* Pods_GapoiOSChallengeUITests.framework */; };
 		84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408548237E994500A69324 /* SearchLocationViewController.swift */; };
-		8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440854B237E9A2400A69324 /* LocationTableViewCell.swift */; };
+		8440854C237E9A2400A69324 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440854B237E9A2400A69324 /* PlaceTableViewCell.swift */; };
 		8440854E237E9DDE00A69324 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440854D237E9DDE00A69324 /* MapKit.framework */; };
 		84408551237EA8A000A69324 /* EIdentifierSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408550237EA8A000A69324 /* EIdentifierSegue.swift */; };
+		84408553237EB4C500A69324 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408552237EB4C500A69324 /* PlaceModel.swift */; };
 		844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10D8237D6150007758E9 /* AppDelegate.swift */; };
 		844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B10DA237D6150007758E9 /* SceneDelegate.swift */; };
 		844B10E0237D6150007758E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B10DE237D6150007758E9 /* Main.storyboard */; };
@@ -26,6 +27,12 @@
 		844B1116237D6B9E007758E9 /* GoogleMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B1115237D6B9E007758E9 /* GoogleMapRepository.swift */; };
 		844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B1117237D6BC0007758E9 /* GoogleMapViewModel.swift */; };
 		846D6BAC237D6C60002FE684 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846D6BAB237D6C60002FE684 /* Endpoints.swift */; };
+		8475EB34237FFD2100B29F14 /* GoogleMapsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB33237FFD2100B29F14 /* GoogleMapsDTO.swift */; };
+		8475EB37237FFDFC00B29F14 /* GoogleMapsSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB36237FFDFC00B29F14 /* GoogleMapsSampleData.swift */; };
+		8475EB3923800DE400B29F14 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB3823800DE400B29F14 /* AppConfiguration.swift */; };
+		8475EB42238011E600B29F14 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB41238011E600B29F14 /* ViewModel.swift */; };
+		8475EB442380123500B29F14 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB432380123500B29F14 /* SearchPlaceViewModel.swift */; };
+		8475EB4623802FB700B29F14 /* BindingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB4523802FB700B29F14 /* BindingProtocol.swift */; };
 		84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016A237E52AB004C99DF /* UIView+Extensions.swift */; };
 		84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -53,10 +60,11 @@
 		4932604C2153F78B63D61856 /* Pods_GapoiOSChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapoiOSChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F89699948A58955C21BA931 /* Pods-GapoiOSChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallengeUITests/Pods-GapoiOSChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		84408548237E994500A69324 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
-		8440854B237E9A2400A69324 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		8440854B237E9A2400A69324 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		8440854D237E9DDE00A69324 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8440854F237E9DE600A69324 /* GapoiOSChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GapoiOSChallenge.entitlements; sourceTree = "<group>"; };
 		84408550237EA8A000A69324 /* EIdentifierSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EIdentifierSegue.swift; sourceTree = "<group>"; };
+		84408552237EB4C500A69324 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		844B10D5237D6150007758E9 /* GapoiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapoiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844B10D8237D6150007758E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844B10DA237D6150007758E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,12 @@
 		844B1115237D6B9E007758E9 /* GoogleMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapRepository.swift; sourceTree = "<group>"; };
 		844B1117237D6BC0007758E9 /* GoogleMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewModel.swift; sourceTree = "<group>"; };
 		846D6BAB237D6C60002FE684 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		8475EB33237FFD2100B29F14 /* GoogleMapsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsDTO.swift; sourceTree = "<group>"; };
+		8475EB36237FFDFC00B29F14 /* GoogleMapsSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsSampleData.swift; sourceTree = "<group>"; };
+		8475EB3823800DE400B29F14 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		8475EB41238011E600B29F14 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8475EB432380123500B29F14 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
+		8475EB4523802FB700B29F14 /* BindingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingProtocol.swift; sourceTree = "<group>"; };
 		84B6016A237E52AB004C99DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8750461646DFB9E8801B41E2 /* Pods-GapoiOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallenge.release.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallenge/Pods-GapoiOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +154,7 @@
 		8440854A237E99E900A69324 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				8440854B237E9A2400A69324 /* LocationTableViewCell.swift */,
+				8440854B237E9A2400A69324 /* PlaceTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 		844B1108237D6A33007758E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84408552237EB4C500A69324 /* PlaceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				844B1117237D6BC0007758E9 /* GoogleMapViewModel.swift */,
+				8475EB432380123500B29F14 /* SearchPlaceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +255,9 @@
 		844B110C237D6A6A007758E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8475EB3A23800F4C00B29F14 /* Plugins */,
+				8475EB35237FFDE800B29F14 /* SampleData */,
+				8475EB32237FFD0200B29F14 /* DTO */,
 				844B110E237D6AF4007758E9 /* GoogleMapsApiService.swift */,
 			);
 			path = Services;
@@ -275,6 +294,7 @@
 				844B10DA237D6150007758E9 /* SceneDelegate.swift */,
 				844B10E3237D6153007758E9 /* LaunchScreen.storyboard */,
 				844B10E6237D6153007758E9 /* Info.plist */,
+				8475EB3823800DE400B29F14 /* AppConfiguration.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -288,9 +308,42 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		8475EB32237FFD0200B29F14 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				8475EB33237FFD2100B29F14 /* GoogleMapsDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		8475EB35237FFDE800B29F14 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				8475EB36237FFDFC00B29F14 /* GoogleMapsSampleData.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		8475EB3A23800F4C00B29F14 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		8475EB40238011D900B29F14 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8475EB41238011E600B29F14 /* ViewModel.swift */,
+				8475EB4523802FB700B29F14 /* BindingProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		84B60168237E5293004C99DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8475EB40238011D900B29F14 /* Base */,
 				84B6016C237E52C1004C99DF /* ViewControllers */,
 				84B60169237E529A004C99DF /* Views */,
 			);
@@ -555,15 +608,22 @@
 				844B1114237D6B62007758E9 /* GoogleMapViewController.swift in Sources */,
 				844B10D9237D6150007758E9 /* AppDelegate.swift in Sources */,
 				84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */,
+				84408553237EB4C500A69324 /* PlaceModel.swift in Sources */,
 				844B1116237D6B9E007758E9 /* GoogleMapRepository.swift in Sources */,
+				8475EB4623802FB700B29F14 /* BindingProtocol.swift in Sources */,
 				844B110F237D6AF4007758E9 /* GoogleMapsApiService.swift in Sources */,
 				844B10DB237D6150007758E9 /* SceneDelegate.swift in Sources */,
+				8475EB34237FFD2100B29F14 /* GoogleMapsDTO.swift in Sources */,
+				8475EB442380123500B29F14 /* SearchPlaceViewModel.swift in Sources */,
 				846D6BAC237D6C60002FE684 /* Endpoints.swift in Sources */,
 				84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */,
-				8440854C237E9A2400A69324 /* LocationTableViewCell.swift in Sources */,
+				8475EB3923800DE400B29F14 /* AppConfiguration.swift in Sources */,
+				8475EB42238011E600B29F14 /* ViewModel.swift in Sources */,
+				8440854C237E9A2400A69324 /* PlaceTableViewCell.swift in Sources */,
 				84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */,
 				84408551237EA8A000A69324 /* EIdentifierSegue.swift in Sources */,
 				844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */,
+				8475EB37237FFDFC00B29F14 /* GoogleMapsSampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
