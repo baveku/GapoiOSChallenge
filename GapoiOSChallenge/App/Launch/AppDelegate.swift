@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if localtionAuthStatus != .authorizedWhenInUse || localtionAuthStatus != .authorizedAlways {
             CLLocationManager().requestWhenInUseAuthorization()
         }
+        
+        FirebaseApp.configure()
         return true
     }
 

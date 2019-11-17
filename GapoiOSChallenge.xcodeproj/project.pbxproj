@@ -33,6 +33,8 @@
 		8475EB42238011E600B29F14 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB41238011E600B29F14 /* ViewModel.swift */; };
 		8475EB442380123500B29F14 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB432380123500B29F14 /* SearchPlaceViewModel.swift */; };
 		8475EB4623802FB700B29F14 /* BindingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB4523802FB700B29F14 /* BindingProtocol.swift */; };
+		8478E8B823815F0B00EC37EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8478E8B723815F0B00EC37EE /* GoogleService-Info.plist */; };
+		8478E8BA23815F5A00EC37EE /* CrashlyticsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478E8B923815F5A00EC37EE /* CrashlyticsNetwork.swift */; };
 		84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016A237E52AB004C99DF /* UIView+Extensions.swift */; };
 		84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */; };
 		84EF98E623810C6400605A85 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF98E523810C6400605A85 /* ColorUtils.swift */; };
@@ -90,6 +92,8 @@
 		8475EB41238011E600B29F14 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8475EB432380123500B29F14 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
 		8475EB4523802FB700B29F14 /* BindingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingProtocol.swift; sourceTree = "<group>"; };
+		8478E8B723815F0B00EC37EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8478E8B923815F5A00EC37EE /* CrashlyticsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsNetwork.swift; sourceTree = "<group>"; };
 		84B6016A237E52AB004C99DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		84EF98E523810C6400605A85 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 				844B10D8237D6150007758E9 /* AppDelegate.swift */,
 				844B10DA237D6150007758E9 /* SceneDelegate.swift */,
 				844B10E3237D6153007758E9 /* LaunchScreen.storyboard */,
+				8478E8B723815F0B00EC37EE /* GoogleService-Info.plist */,
 				844B10E6237D6153007758E9 /* Info.plist */,
 				8475EB3823800DE400B29F14 /* AppConfiguration.swift */,
 			);
@@ -330,6 +335,7 @@
 		8475EB3A23800F4C00B29F14 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				8478E8B923815F5A00EC37EE /* CrashlyticsNetwork.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844B10E5237D6153007758E9 /* LaunchScreen.storyboard in Resources */,
+				8478E8B823815F0B00EC37EE /* GoogleService-Info.plist in Resources */,
 				844B10E2237D6153007758E9 /* Assets.xcassets in Resources */,
 				844B10E0237D6150007758E9 /* Main.storyboard in Resources */,
 			);
@@ -633,6 +640,7 @@
 				8475EB42238011E600B29F14 /* ViewModel.swift in Sources */,
 				8440854C237E9A2400A69324 /* PlaceTableViewCell.swift in Sources */,
 				84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */,
+				8478E8BA23815F5A00EC37EE /* CrashlyticsNetwork.swift in Sources */,
 				84408551237EA8A000A69324 /* EIdentifierSegue.swift in Sources */,
 				844B1118237D6BC0007758E9 /* GoogleMapViewModel.swift in Sources */,
 				8475EB37237FFDFC00B29F14 /* GoogleMapsSampleData.swift in Sources */,
