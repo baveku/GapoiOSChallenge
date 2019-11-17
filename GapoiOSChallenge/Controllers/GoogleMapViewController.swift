@@ -21,6 +21,12 @@ class GoogleMapViewController: UIBaseViewController {
         return polyline
     }()
     
+    lazy var currentMarker: GMSMarker = {
+        let marker = GMSMarker()
+        marker.icon = UIImage(named: "ic_cu_location")?.withTintColor(UIColor.gray)
+        return marker
+    }()
+    
     lazy var fromMarker: GMSMarker = {
         let marker = GMSMarker()
         marker.icon = UIImage(named: "location_pin_blue")
@@ -51,6 +57,7 @@ class GoogleMapViewController: UIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light 
         bindingUI()
         bindingData()
     }
@@ -144,7 +151,8 @@ extension GoogleMapViewController: ViewBindable {
         }).disposed(by: self.disposeBag)
         
         // MARK: Camera
-        self.viewModel.cameraLocationPublish.subscribe(onNext: { (location) in
+        self.viewModel.currentLocation.subscribe(onNext: { (location) in
+            self.markerUpdatePosition(self.currentMarker, position: location.toCoordinate2D())
             self.updateCamera(to: location)
         }).disposed(by: self.disposeBag)
     }
@@ -181,14 +189,16 @@ extension GoogleMapViewController {
         self.updateCamera(to: place.geometry.location, zoom: 18)
         switch type {
         case .from:
-            self.fromMarker.map = nil
-            self.fromMarker.position = position
-            self.fromMarker.map = self.mapView
+            self.markerUpdatePosition(fromMarker, position: position)
         case .to:
-            self.toMarker.map = nil
-            self.toMarker.position = position
-            self.toMarker.map = self.mapView
+            self.markerUpdatePosition(toMarker, position: position)
             self.updateCameraBetweenTwoPlace()
         }
+    }
+    
+    func markerUpdatePosition(_ marker: GMSMarker, position: CLLocationCoordinate2D) {
+        marker.map = nil
+        marker.position = position
+        marker.map = self.mapView
     }
 }

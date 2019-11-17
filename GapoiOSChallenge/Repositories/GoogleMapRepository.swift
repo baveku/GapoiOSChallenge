@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 class GoogleMapRepository {
-    private let provider = MoyaProvider<GoogleMapsApiService>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    private let provider = MoyaProvider<GoogleMapsApiService>(plugins: [NetworkLoggerPlugin(verbose: true), CrashlyticsNetwork()])
     
     
     func getDirection(origin: String, destination: String, mode: DirectionMode) -> Observable<GetDirectionResponse> {
