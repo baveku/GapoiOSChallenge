@@ -16,6 +16,7 @@ class SearchPlaceViewModel: BaseViewModel {
     var places = BehaviorRelay<[Place]>(value: [])
     
     // MARK: Init
+    var placeSelected: Place? = nil
     init(repo: GoogleMapRepository = GoogleMapRepository()) {
         self.repository = repo
     }
@@ -24,11 +25,32 @@ class SearchPlaceViewModel: BaseViewModel {
     private var repository = GoogleMapRepository()
     
     // MARK: Call Services
-    func searchPlace() {
-        self.repository.searchPlace(text: self.query.value).subscribe(onNext: { (resp) in
-            self.places.accept(resp.results)
-        }, onError: { (err) in
-            self.error.onNext(err.localizedDescription)
+    
+    /** Create a search observable
+      - parameters: - a query from textinput
+      - returns: - List Place from MapSDK
+    **/
+    func onSearchPlace() {
+        guard !self.query.value.isEmpty else {
+            return
+        }
+        self.loading.accept(true)
+        self.repository.searchPlace(text: self.query.value).subscribe(onNext: { [weak self] (resp) in
+            self?.places.accept(resp.results)
+            self?.loading.accept(false)
+        }, onError: { [weak self] (err) in
+            self?.error.onNext(err.localizedDescription)
+            self?.loading.accept(false)
         }).disposed(by: self.disposeBag)
+    }
+    
+    // MARK: Muation
+    func onUpdateQuery(_ query: String) {
+        self.query.accept(query)
+        self.onSearchPlace()
+    }
+    
+    func onSelectedPlace(_ place: Place) {
+        self.placeSelected = place
     }
 }

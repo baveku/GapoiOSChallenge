@@ -13,7 +13,6 @@ class AppConfiguration {
     private var _cache = [String: Any]()
     enum Keys: String {
         case mapSDKApiKey = "MapsSDKApiKey"
-        case placeSDKApiKey = "PlaceSDKApiKey"
     }
     
     func getItem(key: Keys) -> Any {

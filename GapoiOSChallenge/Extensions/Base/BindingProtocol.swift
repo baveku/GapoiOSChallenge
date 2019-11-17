@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ViewBindingable where Self: UIViewController {
+protocol ViewBindable where Self: UIViewController {
     func bindingData()
     func bindingUI()
 }

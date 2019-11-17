@@ -35,6 +35,7 @@
 		8475EB4623802FB700B29F14 /* BindingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EB4523802FB700B29F14 /* BindingProtocol.swift */; };
 		84B6016B237E52AB004C99DF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016A237E52AB004C99DF /* UIView+Extensions.swift */; };
 		84B6016E237E52D6004C99DF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */; };
+		84EF98E623810C6400605A85 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF98E523810C6400605A85 /* ColorUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		8475EB4523802FB700B29F14 /* BindingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingProtocol.swift; sourceTree = "<group>"; };
 		84B6016A237E52AB004C99DF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		84EF98E523810C6400605A85 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		8750461646DFB9E8801B41E2 /* Pods-GapoiOSChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallenge.release.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallenge/Pods-GapoiOSChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		ABCB77E767C944D88FF2425D /* Pods_GapoiOSChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapoiOSChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2109B6353AAA690553317A3 /* Pods-GapoiOSChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapoiOSChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-GapoiOSChallengeTests/Pods-GapoiOSChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				844B110A237D6A42007758E9 /* Controllers */,
 				844B1109237D6A3C007758E9 /* ViewModels */,
 				844B1108237D6A33007758E9 /* Models */,
+				84EF98E423810C2A00605A85 /* Utilities */,
 				844B10E1237D6153007758E9 /* Assets.xcassets */,
 			);
 			path = GapoiOSChallenge;
@@ -364,6 +367,14 @@
 				84B6016D237E52D6004C99DF /* UIViewController+Extension.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84EF98E423810C2A00605A85 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				84EF98E523810C6400605A85 /* ColorUtils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +627,7 @@
 				8475EB34237FFD2100B29F14 /* GoogleMapsDTO.swift in Sources */,
 				8475EB442380123500B29F14 /* SearchPlaceViewModel.swift in Sources */,
 				846D6BAC237D6C60002FE684 /* Endpoints.swift in Sources */,
+				84EF98E623810C6400605A85 /* ColorUtils.swift in Sources */,
 				84408549237E994500A69324 /* SearchLocationViewController.swift in Sources */,
 				8475EB3923800DE400B29F14 /* AppConfiguration.swift in Sources */,
 				8475EB42238011E600B29F14 /* ViewModel.swift in Sources */,

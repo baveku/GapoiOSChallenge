@@ -29,7 +29,7 @@ struct Location: Codable {
 }
 
 struct Geometry: Codable {
-    enum CodeingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case location = "location"
     }
     
@@ -37,14 +37,14 @@ struct Geometry: Codable {
 }
 
 struct Place: Codable {
-    enum CodeingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case geometry
         case icon
         case name
-        case vincity
+        case address = "formatted_address"
     }
     let geometry: Geometry
     let icon: String
     let name: String
-    let vincity: String
+    let address: String
 }

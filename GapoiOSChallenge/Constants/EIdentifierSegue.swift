@@ -11,3 +11,7 @@ import Foundation
 enum EIdentifierSegue: String {
     case fromGoogleMaptoSeachMap = "fromGoogleMaptoSeachMap"
 }
+
+enum UnwindIdentifierSegue: String {
+    case unwindToMap = "unwindToMap"
+}

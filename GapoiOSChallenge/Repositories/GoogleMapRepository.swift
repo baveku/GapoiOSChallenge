@@ -23,6 +23,7 @@ class GoogleMapRepository {
                     do {
                         let directionResponse = try JSONDecoder().decode(GetDirectionResponse.self, from: response.data)
                         observer.onNext(directionResponse)
+                        observer.onCompleted()
                     } catch let err {
                         print("[DECODE ERROR] cannot decode JSON \(String(describing: String.init(data: response.data, encoding: .utf8)))")
                         observer.onError(err)
@@ -30,8 +31,6 @@ class GoogleMapRepository {
                 case .failure(let err):
                     observer.onError(err)
                 }
-                
-                observer.onCompleted()
             }
             return Disposables.create()
         }
@@ -40,12 +39,13 @@ class GoogleMapRepository {
     func searchPlace(text: String) -> Observable<PlaceSearchResponse> {
         return Observable.create { observer -> Disposable in
             let request = PlaceSearchRequest.init(query: text)
-            self.provider.request(.placeSearch(request)) { (results) in
+            self.provider.request(.placeSearch(request))  { (results) in
                 switch results {
                 case .success(let response):
                     do {
-                        let searchResponse = try JSONDecoder().decode(PlaceSearchResponse.self, from: response.data)
-                        observer.onNext(searchResponse)
+                        let jsonDecode = try JSONDecoder().decode(PlaceSearchResponse.self, from: response.data)
+                        observer.onNext(jsonDecode)
+                        observer.onCompleted()
                     } catch let err {
                         print("[DECODE ERROR] cannot decode JSON \(String(describing: String.init(data: response.data, encoding: .utf8)))")
                         observer.onError(err)
@@ -54,7 +54,6 @@ class GoogleMapRepository {
                     observer.onError(err)
                 }
             }
-            observer.onCompleted()
             return Disposables.create()
         }
     }

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -147,29 +147,41 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oJ7-DF-A28" userLabel="VehiceStackView">
                                         <rect key="frame" x="0.0" y="120" width="414" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-zP-01X" userLabel="Bus">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-zP-01X" userLabel="Bus">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" red="0.10883772559353155" green="0.35182988139389304" blue="1" alpha="0.40147123550124275" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ic_qu_directions_bus"/>
                                                 <state key="selected" image="ic_qu_directions_bus"/>
+                                                <connections>
+                                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwr-fq-Bgo"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgZ-W4-lrB" userLabel="Car">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgZ-W4-lrB" userLabel="Car">
                                                 <rect key="frame" x="103.5" y="0.0" width="103.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" red="0.10883772559353155" green="0.35182988139389304" blue="1" alpha="0.35762220381110188" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ic_qu_drive"/>
+                                                <connections>
+                                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ue-z7-y0z"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-xZ-KuB" userLabel="Moto">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-xZ-KuB" userLabel="Moto">
                                                 <rect key="frame" x="207" y="0.0" width="103.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" red="0.10883772559353155" green="0.35182988139389304" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ic_qu_biking"/>
+                                                <connections>
+                                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5F-48-aaw"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-OA-iQ8" userLabel="Walk">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-OA-iQ8" userLabel="Walk">
                                                 <rect key="frame" x="310.5" y="0.0" width="103.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ic_qu_walking"/>
+                                                <connections>
+                                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkD-xU-SLE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -212,11 +224,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bicyclingButton" destination="pk4-xZ-KuB" id="lJ6-gd-Ohb"/>
                         <outlet property="currenLocationButton" destination="7WH-Nb-ceq" id="IpF-ps-jjA"/>
+                        <outlet property="drivingButton" destination="kgZ-W4-lrB" id="P9S-ve-p0R"/>
                         <outlet property="fromButton" destination="t44-8k-3B5" id="DuE-dF-u7w"/>
                         <outlet property="mapView" destination="CC5-Fi-cqj" id="HP7-JU-lap"/>
                         <outlet property="toButton" destination="qfb-gO-ZVt" id="YbH-fn-nf6"/>
-                        <segue destination="CIi-nV-Fiu" kind="modal" identifier="fromGoogleMaptoSeachMap" id="1d6-hw-7Fe"/>
+                        <outlet property="transitButton" destination="8Ff-zP-01X" id="hEx-nh-9MF"/>
+                        <outlet property="walkingButton" destination="9kd-OA-iQ8" id="mIL-Nz-z6g"/>
+                        <segue destination="CIi-nV-Fiu" kind="modal" identifier="fromGoogleMaptoSeachMap" modalPresentationStyle="fullScreen" id="1d6-hw-7Fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -228,11 +244,11 @@
             <objects>
                 <viewController id="CIi-nV-Fiu" customClass="SearchLocationViewController" customModule="GapoiOSChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfG-0O-6OX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-Yk-sZz">
-                                <rect key="frame" x="0.0" y="68" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceTableViewCell" textLabel="SF0-X9-YJZ" detailTextLabel="pec-zC-8WJ" imageView="Xgs-lo-dtb" rowHeight="67" style="IBUITableViewCellStyleSubtitle" id="zdo-kI-wBq" customClass="PlaceTableViewCell" customModule="GapoiOSChallenge" customModuleProvider="target">
@@ -271,7 +287,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4D-o2-ZhU">
-                                <rect key="frame" x="0.0" y="12" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -290,9 +306,11 @@
                     <connections>
                         <outlet property="searchBar" destination="B4D-o2-ZhU" id="8yT-6C-7Ph"/>
                         <outlet property="tableView" destination="VkD-Yk-sZz" id="RwA-DK-xQs"/>
+                        <segue destination="8Cz-wB-OhZ" kind="unwind" identifier="unwindToMap" unwindAction="unwindFromSelectLocation:" id="tZz-tV-yb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pml-14-tdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8Cz-wB-OhZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="871.01449275362324" y="132.58928571428572"/>
         </scene>

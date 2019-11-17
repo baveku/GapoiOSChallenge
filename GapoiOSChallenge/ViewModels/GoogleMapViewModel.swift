@@ -9,14 +9,24 @@
 import RxSwift
 import CoreLocation
 import GoogleMaps
+import RxRelay
 
 class GoogleMapViewModel: BaseViewModel {
+    enum EPlaceDirection {
+        case from
+        case to
+    }
+    private var currentSelectType: EPlaceDirection = .from
+    
     private var _repository: GoogleMapRepository = GoogleMapRepository()
     private var _locationManager = CLLocationManager()
     
     // MARK: Public
-//    var fromLocation = Variable<CLLocationCoordinate2D>(nil)
-//    var toLocation = PublishSubject<CLLocationCoordinate2D>(nil)
+    var fromPlace = BehaviorRelay<Place?>(value: nil)
+    var toPlace = BehaviorRelay<Place?>(value: nil)
+    var directionMode = BehaviorRelay<DirectionMode>(value: .driving)
+    
+    var rawPolyline = PublishSubject<String>()
     var cameraLocationPublish = PublishSubject<Location>()
 
     // MARK: Action
@@ -28,18 +38,54 @@ class GoogleMapViewModel: BaseViewModel {
     
     // MARK: API service
     func getDirectionFromGoogleMapAPI() {
+        guard  self.fromPlace.value != nil && self.toPlace.value != nil else {
+            return
+        }
         
+        let origin = "\(self.fromPlace.value!.geometry.location.lat),\(self.fromPlace.value!.geometry.location.lng)"
+        let des = "\(self.toPlace.value!.geometry.location.lat),\(self.toPlace.value!.geometry.location.lng)"
+        self._repository.getDirection(origin: origin, destination: des, mode: self.directionMode.value).subscribe(onNext: { (response) in
+            guard response.routes.count > 0 else {
+                self.error.onNext("Not Found!!")
+                return
+            }
+            
+            self.rawPolyline.onNext(response.routes[0].overviewPolyline.points)
+        }, onError: { (err) in
+            self.error.onNext(err.localizedDescription)
+        }).disposed(by: self.disposeBag)
     }
-    
-    func updateVehicel() {}
     
     // MARK: Private
     private var _currentLocation: Location? = nil
     
     // MARK: Function
-    
     func requestCurrentLocation() {
         self._locationManager.requestLocation()
+    }
+    
+    // MARK: Mutation
+    func onChangeMode(_ newMode: DirectionMode) {
+        guard newMode != self.directionMode.value else {
+            return
+        }
+        
+        self.directionMode.accept(newMode)
+        self.getDirectionFromGoogleMapAPI()
+    }
+    
+    func onUpdatePlace(place: Place) {
+        switch self.currentSelectType {
+        case .from:
+            self.fromPlace.accept(place)
+        case .to:
+            self.toPlace.accept(place)
+            self.getDirectionFromGoogleMapAPI()
+        }
+    }
+    
+    func onUpdateCurrentSelectedType(_ value: EPlaceDirection) {
+        self.currentSelectType = value
     }
 }
 

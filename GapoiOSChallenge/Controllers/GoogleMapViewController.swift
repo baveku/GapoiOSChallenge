@@ -14,56 +14,181 @@ import RxSwift
 class GoogleMapViewController: UIBaseViewController {
     let viewModel = GoogleMapViewModel()
     
+    lazy var polyline: GMSPolyline = {
+        let polyline = GMSPolyline()
+        polyline.strokeWidth = 5
+        polyline.map = self.mapView
+        return polyline
+    }()
+    
+    lazy var fromMarker: GMSMarker = {
+        let marker = GMSMarker()
+        marker.icon = UIImage(named: "location_pin_blue")
+        marker.title = "Start Location"
+        marker.map = self.mapView
+        
+        return marker
+    }()
+    
+    lazy var toMarker: GMSMarker = {
+        let marker = GMSMarker()
+        marker.icon = UIImage(named: "location_pin")
+        marker.title = "End Location"
+        marker.map = self.mapView
+        
+        return marker
+    }()
+    
     // MARK: IBOutlet
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var fromButton: DesignableButton!
     @IBOutlet weak var toButton: DesignableButton!
     @IBOutlet weak var currenLocationButton: DesignableButton!
+    @IBOutlet weak var transitButton: UIButton!
+    @IBOutlet weak var drivingButton: UIButton!
+    @IBOutlet weak var bicyclingButton: UIButton!
+    @IBOutlet weak var walkingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindingModel()
-        bindingAction()
+        bindingUI()
+        bindingData()
     }
 
-    // MARK: Action
-    func onUpdateDirections() {
-        self.viewModel.getDirectionFromGoogleMapAPI()
-    }
-
+    // MARK: IBAction
     @IBAction func onSelectLocation(_ sender: DesignableButton) {
+        let type: GoogleMapViewModel.EPlaceDirection = sender.tag == 0 ? GoogleMapViewModel.EPlaceDirection.from : GoogleMapViewModel.EPlaceDirection.to
+        
+        self.viewModel.onUpdateCurrentSelectedType(type)
         self.performSegue(withIdentifier: EIdentifierSegue.fromGoogleMaptoSeachMap.rawValue, sender: nil)
     }
     
-    // MARK: MapView Action
-    func updateCamera(to location: Location) {
-        let position = GMSCameraPosition(target: location.toCoordinate2D(), zoom: 12)
-        self.mapView.animate(with: .setCamera(position))
+    @IBAction func changeMode(_ sender: UIButton) {
+        onDisableButton(transitButton)
+        onDisableButton(drivingButton)
+        onDisableButton(bicyclingButton)
+        onDisableButton(walkingButton)
+
+        sender.tintColor = UIColor.blue
+        
+        switch sender.tag {
+        case 0:
+            self.viewModel.onChangeMode(.transit)
+        case 1:
+            self.viewModel.onChangeMode(.driving)
+        case 2:
+            self.viewModel.onChangeMode(.bicycling)
+        case 3:
+            self.viewModel.onChangeMode(.walking)
+        default:
+            return
+        }
+    }
+    
+    func onDisableButton(_ button: UIButton) {
+        button.tintColor = UIColor.blue.withAlphaComponent(0.4)
+        button.isSelected = false
+    }
+
+    // MARK: Handle UnwindData
+    @IBAction func unwindFromSelectLocation(_ sender: UIStoryboardSegue) {
+        if sender.source is SearchLocationViewController {
+            let source = sender.source as! SearchLocationViewController
+            if let place = source.viewModel.placeSelected {
+                self.viewModel.onUpdatePlace(place: place)
+            }
+        }
     }
 }
 
-// MARK
-extension GoogleMapViewController {
-    func bindingModel() {
+// MARK: ViewBindable
+extension GoogleMapViewController: ViewBindable {
+    func bindingData() {
+        
+        // MARK: Handle Error, Loading
         self.viewModel.error.subscribe({
-            UIAlertController.init(title: "ERROR", message: "\($0)", preferredStyle: .alert).show(self, sender: nil)
+            guard let message = $0.element else {
+                return
+            }
+            let alert = UIAlertController.init(title: "ERROR", message: message, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         }).disposed(by: self.disposeBag)
+        
         self.viewModel.loading.subscribe { (isLoading) in
             // Handle Loading Event
             print(isLoading)
         }.disposed(by: self.disposeBag)
         
-        self.viewModel.cameraLocationPublish.subscribe({ (event) in
-            guard let location = event.element else {
+        // MARK: Place
+        self.viewModel.fromPlace.bind { (place) in
+            guard let address = place?.address else {
                 return
             }
+            self.fromButton.setTitle(address, for: .normal)
+            self.updateMarker(for: .from, place: place!)
+        }.disposed(by: self.disposeBag)
+        
+        self.viewModel.toPlace.bind { (place) in
+            guard let address = place?.address else {
+                return
+            }
+            self.toButton.setTitle(address, for: .normal)
+            self.updateMarker(for: .to, place: place!)
+        }.disposed(by: self.disposeBag)
+        
+        // MARK: Polyline
+        self.viewModel.rawPolyline.subscribe(onNext: { (raw) in
+            self.updatePolyline(rawPath: raw, mode: self.viewModel.directionMode.value)
+        }).disposed(by: self.disposeBag)
+        
+        // MARK: Camera
+        self.viewModel.cameraLocationPublish.subscribe(onNext: { (location) in
             self.updateCamera(to: location)
         }).disposed(by: self.disposeBag)
     }
     
-    func bindingAction() {
+    func bindingUI() {
         self.currenLocationButton.rx.tap.bind {
             self.viewModel.requestCurrentLocation()
         }.disposed(by: self.disposeBag)
+    }
+}
+// MARK: MapView Action
+extension GoogleMapViewController {
+    func updateCamera(to location: Location, zoom: Float = 12) {
+        let position = GMSCameraPosition(target: location.toCoordinate2D(), zoom: zoom)
+        self.mapView.camera = position
+        self.mapView.animate(with: .setCamera(position))
+    }
+    
+    func updateCameraBetweenTwoPlace() {
+        let bounds = GMSCoordinateBounds.init(coordinate: fromMarker.position, coordinate: toMarker.position)
+        let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(20))
+        self.mapView.moveCamera(update)
+    }
+    
+    func updatePolyline(rawPath: String, mode: DirectionMode) {
+        let path = GMSPath.init(fromEncodedPath: rawPath)
+        self.polyline.path = path
+        self.polyline.strokeColor = ColorHelpers.fromDirectionMode(mode)
+        self.polyline.map = self.mapView
+    }
+    
+    func updateMarker(for type: GoogleMapViewModel.EPlaceDirection, place: Place) {
+        let position = place.geometry.location.toCoordinate2D()
+        self.updateCamera(to: place.geometry.location, zoom: 18)
+        switch type {
+        case .from:
+            self.fromMarker.map = nil
+            self.fromMarker.position = position
+            self.fromMarker.map = self.mapView
+        case .to:
+            self.toMarker.map = nil
+            self.toMarker.position = position
+            self.toMarker.map = self.mapView
+            self.updateCameraBetweenTwoPlace()
+        }
     }
 }

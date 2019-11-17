@@ -51,10 +51,10 @@ extension GoogleMapsApiService: TargetType {
         switch self {
         case .getDirection(let request):
             print(request)
-            return .requestJSONEncodable(request)
+            return .requestParameters(parameters: ["origin": request.origin, "destination": request.destination, "mode": request.mode, "key": request.key], encoding: URLEncoding.default)
         case .placeSearch(let request):
             print(request)
-            return .requestJSONEncodable(request)
+            return .requestParameters(parameters: ["query": request.query, "key": request.key], encoding: URLEncoding.default)
         }
     }
     
