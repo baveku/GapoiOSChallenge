@@ -153,7 +153,7 @@ extension GoogleMapViewController: ViewBindable {
         // MARK: Camera
         self.viewModel.currentLocation.subscribe(onNext: { (location) in
             self.markerUpdatePosition(self.currentMarker, position: location.toCoordinate2D())
-            self.updateCamera(to: location)
+            self.updateCamera(to: location, zoom: 18)
         }).disposed(by: self.disposeBag)
     }
     
@@ -167,8 +167,8 @@ extension GoogleMapViewController: ViewBindable {
 extension GoogleMapViewController {
     func updateCamera(to location: Location, zoom: Float = 12) {
         let position = GMSCameraPosition(target: location.toCoordinate2D(), zoom: zoom)
-        self.mapView.camera = position
-        self.mapView.animate(with: .setCamera(position))
+        let update = GMSCameraUpdate.setCamera(position)
+        self.mapView.moveCamera(update)
     }
     
     func updateCameraBetweenTwoPlace() {
