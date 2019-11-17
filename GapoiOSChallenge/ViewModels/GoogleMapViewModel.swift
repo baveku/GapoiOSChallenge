@@ -9,14 +9,17 @@
 import RxSwift
 import CoreLocation
 import GoogleMaps
+import RxRelay
 
 class GoogleMapViewModel: BaseViewModel {
     private var _repository: GoogleMapRepository = GoogleMapRepository()
     private var _locationManager = CLLocationManager()
     
     // MARK: Public
-//    var fromLocation = Variable<CLLocationCoordinate2D>(nil)
-//    var toLocation = PublishSubject<CLLocationCoordinate2D>(nil)
+    var fromPlace = BehaviorRelay<Place?>(value: nil)
+    var toPlace = BehaviorRelay<Place?>(value: nil)
+    var directionMode = BehaviorRelay<DirectionMode>(value: .driving)
+    
     var cameraLocationPublish = PublishSubject<Location>()
 
     // MARK: Action
@@ -30,8 +33,6 @@ class GoogleMapViewModel: BaseViewModel {
     func getDirectionFromGoogleMapAPI() {
         
     }
-    
-    func updateVehicel() {}
     
     // MARK: Private
     private var _currentLocation: Location? = nil

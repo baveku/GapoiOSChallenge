@@ -17,6 +17,8 @@ class SearchLocationViewController: UIBaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,12 @@ class SearchLocationViewController: UIBaseViewController {
     func initDelegateDataSource() {
         self.searchBar.delegate = self
         self.searchBar.searchTextField.becomeFirstResponder()
+        
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = refreshControl
+        } else {
+            self.tableView.addSubview(refreshControl)
+        }
     }
 }
 
@@ -42,19 +50,22 @@ extension SearchLocationViewController: ViewBindingable {
     func bindingUI() {
         self.searchBar.rx.text.orEmpty.debounce(.seconds(2), scheduler: MainScheduler.instance).distinctUntilChanged().subscribe { (str) in
             if let query = str.element {
-                self.viewModel.query.accept(query)
-                self.viewModel.searchPlace()
+                self.viewModel.onUpdateQuery(query)
             }
         }.disposed(by: self.disposeBag)
         
         self.viewModel.places.bind(to: self.tableView.rx.items(cellIdentifier: "PlaceTableViewCell", cellType: PlaceTableViewCell.self)) { (index, place, cell) in
             cell.configure(place: place)
         }.disposed(by: self.disposeBag)
+        
+        self.viewModel.loading.bind(to: refreshControl.rx.isRefreshing).disposed(by: self.disposeBag)
     }
     
     func bindingData() {
         self.viewModel.error.subscribe({ (event) in
-            UIAlertController.init(title: "ERROR", message: "\(event.element ?? "")", preferredStyle: .alert).show(self, sender: nil)
+            let alert = UIAlertController.init(title: "ERROR", message: "\(event.element ?? "")", preferredStyle: .alert)
+            alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }).disposed(by: self.disposeBag)
         self.viewModel.loading.subscribe { (isLoading) in
             // Handle Loading Event

@@ -8,9 +8,10 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 class BaseViewModel: NSObject {
     let disposeBag = DisposeBag()
     var error = PublishSubject<String>()
-    var loading = PublishSubject<Bool>()
+    var loading = BehaviorRelay<Bool>(value: false)
 }

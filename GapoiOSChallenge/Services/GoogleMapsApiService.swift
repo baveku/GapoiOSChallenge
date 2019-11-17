@@ -54,7 +54,7 @@ extension GoogleMapsApiService: TargetType {
             return .requestJSONEncodable(request)
         case .placeSearch(let request):
             print(request)
-            return .requestJSONEncodable(request)
+            return .requestParameters(parameters: ["query": request.query, "key": request.key], encoding: URLEncoding.default)
         }
     }
     

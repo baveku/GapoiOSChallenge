@@ -44,7 +44,7 @@ struct PlaceSearchRequest: Codable {
 // MARK: Response
 
 struct Routes: Codable {
-    enum CodeingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case overviewPolyline = "overview_polyline"
     }
     
@@ -52,7 +52,7 @@ struct Routes: Codable {
 }
 
 struct GetDirectionResponse: Codable {
-    enum CodeingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case routes = "routes"
     }
     
@@ -60,7 +60,7 @@ struct GetDirectionResponse: Codable {
 }
 
 struct PlaceSearchResponse: Codable {
-    enum CodeingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case results
     }
     

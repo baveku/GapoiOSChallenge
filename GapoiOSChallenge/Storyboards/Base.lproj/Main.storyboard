@@ -216,7 +216,7 @@
                         <outlet property="fromButton" destination="t44-8k-3B5" id="DuE-dF-u7w"/>
                         <outlet property="mapView" destination="CC5-Fi-cqj" id="HP7-JU-lap"/>
                         <outlet property="toButton" destination="qfb-gO-ZVt" id="YbH-fn-nf6"/>
-                        <segue destination="CIi-nV-Fiu" kind="modal" identifier="fromGoogleMaptoSeachMap" id="1d6-hw-7Fe"/>
+                        <segue destination="CIi-nV-Fiu" kind="modal" identifier="fromGoogleMaptoSeachMap" modalPresentationStyle="fullScreen" id="1d6-hw-7Fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -228,11 +228,11 @@
             <objects>
                 <viewController id="CIi-nV-Fiu" customClass="SearchLocationViewController" customModule="GapoiOSChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfG-0O-6OX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-Yk-sZz">
-                                <rect key="frame" x="0.0" y="68" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceTableViewCell" textLabel="SF0-X9-YJZ" detailTextLabel="pec-zC-8WJ" imageView="Xgs-lo-dtb" rowHeight="67" style="IBUITableViewCellStyleSubtitle" id="zdo-kI-wBq" customClass="PlaceTableViewCell" customModule="GapoiOSChallenge" customModuleProvider="target">
@@ -271,7 +271,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4D-o2-ZhU">
-                                <rect key="frame" x="0.0" y="12" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>

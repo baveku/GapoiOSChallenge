@@ -18,7 +18,7 @@ class PlaceTableViewCell: UITableViewCell {
     
     func configure(place: Place) {
         self.title.text = place.name
-        self.subTitile.text = place.vincity
+        self.subTitile.text = place.address
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

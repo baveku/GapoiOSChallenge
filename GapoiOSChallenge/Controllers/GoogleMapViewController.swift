@@ -40,6 +40,10 @@ class GoogleMapViewController: UIBaseViewController {
         let position = GMSCameraPosition(target: location.toCoordinate2D(), zoom: 12)
         self.mapView.animate(with: .setCamera(position))
     }
+    
+    @IBAction func unwindFromSelectLocation(_ sender: UIStoryboardSegue) {
+        
+    }
 }
 
 // MARK
