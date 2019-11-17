@@ -107,7 +107,10 @@ extension GoogleMapViewController: ViewBindable {
         
         // MARK: Handle Error, Loading
         self.viewModel.error.subscribe({
-            let alert = UIAlertController.init(title: "ERROR", message: "\(String(describing: $0.element))", preferredStyle: .alert)
+            guard let message = $0.element else {
+                return
+            }
+            let alert = UIAlertController.init(title: "ERROR", message: message, preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)

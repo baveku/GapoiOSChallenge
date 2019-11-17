@@ -74,10 +74,14 @@ extension SearchLocationViewController: ViewBindable {
         }.disposed(by: self.disposeBag)
         
         self.viewModel.loading.bind(to: refreshControl.rx.isRefreshing).disposed(by: self.disposeBag)
-        
+
         self.viewModel.error.subscribe({ (event) in
-            let alert = UIAlertController.init(title: "ERROR", message: "\(event.element ?? "")", preferredStyle: .alert)
-            alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+            guard let message = event.element else {
+                return
+            }
+            let alert = UIAlertController.init(title: "ERROR", message: message, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
         }).disposed(by: self.disposeBag)
         self.viewModel.loading.subscribe { (isLoading) in

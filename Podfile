@@ -11,6 +11,7 @@ target 'GapoiOSChallenge' do
   pod 'RxSwift', '~> 5.0.1'
   pod 'RxCocoa'
   pod 'Moya'
+  pod 'Firebase/Analytics'
 
   target 'GapoiOSChallengeTests' do
     inherit! :search_paths
