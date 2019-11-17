@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(AppConfiguration.share.getItem(key: .mapSDKApiKey) as! String)
         let localtionAuthStatus = CLLocationManager.authorizationStatus()
         if localtionAuthStatus != .authorizedWhenInUse || localtionAuthStatus != .authorizedAlways {
-            CLLocationManager().requestWhenInUseAuthorization()
+            CLLocationManager().requestAlwaysAuthorization()
         }
         
         FirebaseApp.configure()

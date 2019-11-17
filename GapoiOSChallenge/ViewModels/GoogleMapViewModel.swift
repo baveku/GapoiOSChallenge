@@ -27,7 +27,7 @@ class GoogleMapViewModel: BaseViewModel {
     var directionMode = BehaviorRelay<DirectionMode>(value: .driving)
     
     var rawPolyline = PublishSubject<String>()
-    var cameraLocationPublish = PublishSubject<Location>()
+    var currentLocation = PublishSubject<Location>()
 
     // MARK: Action
     init(repository: GoogleMapRepository = GoogleMapRepository()) {
@@ -96,7 +96,7 @@ extension GoogleMapViewModel: CLLocationManagerDelegate {
         }
         let coordinate = locations[0].coordinate
         self._currentLocation = Location(coordinate: coordinate)
-        self.cameraLocationPublish.onNext(self._currentLocation!)
+        self.currentLocation.onNext(self._currentLocation!)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -22,7 +22,7 @@ class SearchLocationViewController: UIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        overrideUserInterfaceStyle = .light 
         // Do any additional setup after loading the view.
         self.initDelegateDataSource()
         self.bindingUI()
