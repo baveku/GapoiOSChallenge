@@ -11,6 +11,7 @@ import RxRelay
 import RxSwift
 
 class SearchLocationViewController: UIBaseViewController {
+    
     let viewModel = SearchPlaceViewModel()
     
     // MARK: IBOutlet
@@ -46,22 +47,34 @@ extension SearchLocationViewController: UISearchBarDelegate {
     }
 }
 
-extension SearchLocationViewController: ViewBindingable {
+extension SearchLocationViewController: ViewBindable {
     func bindingUI() {
-        self.searchBar.rx.text.orEmpty.debounce(.seconds(2), scheduler: MainScheduler.instance).distinctUntilChanged().subscribe { (str) in
+        self.searchBar.rx.text.orEmpty.debounce(.seconds(1), scheduler: MainScheduler.instance).distinctUntilChanged().subscribe { (str) in
             if let query = str.element {
                 self.viewModel.onUpdateQuery(query)
             }
         }.disposed(by: self.disposeBag)
+        
+        self.tableView.rx.modelSelected(Place.self).subscribe { [weak self] (event) in
+            guard let place = event.element else {
+                return
+            }
+            
+            self?.viewModel.onSelectedPlace(place)
+            self?.performSegue(withIdentifier: UnwindIdentifierSegue.unwindToMap.rawValue, sender: nil)
+        }.disposed(by: self.disposeBag)
+        
+        
+    }
+    
+    func bindingData() {
         
         self.viewModel.places.bind(to: self.tableView.rx.items(cellIdentifier: "PlaceTableViewCell", cellType: PlaceTableViewCell.self)) { (index, place, cell) in
             cell.configure(place: place)
         }.disposed(by: self.disposeBag)
         
         self.viewModel.loading.bind(to: refreshControl.rx.isRefreshing).disposed(by: self.disposeBag)
-    }
-    
-    func bindingData() {
+        
         self.viewModel.error.subscribe({ (event) in
             let alert = UIAlertController.init(title: "ERROR", message: "\(event.element ?? "")", preferredStyle: .alert)
             alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))

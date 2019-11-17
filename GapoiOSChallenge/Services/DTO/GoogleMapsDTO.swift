@@ -29,7 +29,7 @@ struct GetDirectionRequest: Codable {
     let origin: String
     let destination: String
     let mode: DirectionMode.RawValue
-    let key = AppConfiguration.share.getItem(key: .placeSDKApiKey) as! String
+    let key = AppConfiguration.share.getItem(key: .mapSDKApiKey) as! String
 }
 
 struct PlaceSearchRequest: Codable {
@@ -38,17 +38,25 @@ struct PlaceSearchRequest: Codable {
         case key
     }
     let query: String
-    let key = AppConfiguration.share.getItem(key: .placeSDKApiKey) as! String
+    let key = AppConfiguration.share.getItem(key: .mapSDKApiKey) as! String
 }
 
 // MARK: Response
 
-struct Routes: Codable {
+struct OverviewPolyline: Codable {
+    enum CodingKeys: String, CodingKey {
+        case points
+    }
+    
+    let points: String
+}
+
+struct Route: Codable {
     enum CodingKeys: String, CodingKey {
         case overviewPolyline = "overview_polyline"
     }
     
-    let overviewPolyline: String
+    let overviewPolyline: OverviewPolyline
 }
 
 struct GetDirectionResponse: Codable {
@@ -56,7 +64,7 @@ struct GetDirectionResponse: Codable {
         case routes = "routes"
     }
     
-    let routes: Routes
+    let routes: [Route]
 }
 
 struct PlaceSearchResponse: Codable {

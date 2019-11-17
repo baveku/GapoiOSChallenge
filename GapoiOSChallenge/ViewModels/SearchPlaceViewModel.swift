@@ -16,6 +16,7 @@ class SearchPlaceViewModel: BaseViewModel {
     var places = BehaviorRelay<[Place]>(value: [])
     
     // MARK: Init
+    var placeSelected: Place? = nil
     init(repo: GoogleMapRepository = GoogleMapRepository()) {
         self.repository = repo
     }
@@ -47,5 +48,9 @@ class SearchPlaceViewModel: BaseViewModel {
     func onUpdateQuery(_ query: String) {
         self.query.accept(query)
         self.onSearchPlace()
+    }
+    
+    func onSelectedPlace(_ place: Place) {
+        self.placeSelected = place
     }
 }
